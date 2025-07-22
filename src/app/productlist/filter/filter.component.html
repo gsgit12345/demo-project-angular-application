@@ -1,0 +1,25 @@
+<p>filter works!</p>
+<form>
+    <label>
+      <input type="radio" name="all" value="all" [(ngModel)]="selectedRadioButton" (change)="onChangeEventt()">
+      {{"all("+all+")"}}
+    </label><br>
+  
+    <label>
+      <input type="radio" name="inStock" value="true" [(ngModel)]="selectedRadioButton" (change)="onChangeEventt()">
+      {{"inStock("+inStock+")"}}
+
+      
+    </label><br>
+  
+    <label>
+      <input type="radio" name="outStock" value="false" [(ngModel)]="selectedRadioButton" (change)="onChangeEventt()">
+      {{"outStock("+outStock+")"}}
+
+      
+    </label>
+
+    <button (click)="sendMessage()">Send</button>`
+
+  </form>
+  

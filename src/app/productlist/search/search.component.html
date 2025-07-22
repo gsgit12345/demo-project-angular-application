@@ -1,0 +1,21 @@
+
+<div>
+
+<!-- <input  type="text" (input)="updateMenShoes($event)"  [value]="search">  -->
+<!-- //this is achieved using the property and event binding -->
+
+<input  type="text" [(ngModel)]="search" (input)="onSearchTextChanged()"> 
+<input  type="text" #inputvalue> 
+<button  (click)="tempRef(inputvalue)">Templateref</button>
+
+<!-- demo of the viewChild() element  -->
+
+<input  type="text" #childElementdecorator> 
+<button  (click)="viewInputChiledecorator()">ViewChildElement</button>
+
+<button  [disabled]="!search">search</button>
+
+<span *ngIf="search!= '' ">search text is:: {{search}}</span>
+</div>
+
+<button  [ngClass]="{'highlight':isActive,'greyed':isDisabled }">Acyive and in active</button>

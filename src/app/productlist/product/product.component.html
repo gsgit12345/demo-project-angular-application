@@ -1,0 +1,21 @@
+
+
+<p>it is a child component </p>
+<div class="product">
+    <li>"id is:" {{productCh.id}}</li>
+    <li>"name is:" {{productCh.name}}</li>
+    <li >"price is:" {{productCh.price}}</li>
+    <li >"index is:" {{index}}</li>
+    <li *ngIf="isDiscounted">On Discount: {{ productCh.discount }}%</li>
+
+    <ul>
+<li *ngFor ="let rate of ratings">
+<p> first ratings================ ={{rate.first}}</p>
+
+</li>
+
+    </ul>
+
+</div>
+
+ 

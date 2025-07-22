@@ -7,14 +7,19 @@
 
 <body>
 
+  <app-search (searchTextChanged)="setSearchText($event)">
+
+  </app-search>
   <!-- Form -->
   <h3>Contact Me</h3>
   <form>
+    <div *ngFor ="let m of menuitem" href="0">{{m}}</div>
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name"><br><br>
 
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email"><br><br>
+<p *ngif="search ==''  || menuitem.includes(search)">    
 
     <input type="submit"  value="Submit">
 

@@ -1,0 +1,84 @@
+<!-- <div width="10%">
+<img [src]="image">
+
+</div> -->
+
+<!-- <div>
+
+    <app-product *ngFor="let prod of complexObj" [productCh]="prod"></app-product>
+
+this is one way
+</div> -->
+<div>
+<app-filter [all]="10" [inStock]="20" [outStock]=30> (radioButtonChanged)="onFilterr($event)" (messageEvent)="receiveMessage($event)">
+
+    <p>{{"message received ===================================="+ message }}</p>
+
+</app-filter>
+</div>
+<p>Filter component  in the application </p>
+
+<div *ngFor="let prod of complexObj; let i = index">
+    <app-product 
+      [productCh]="prod"
+      [index]="i"
+      [isDiscounted]="prod.discount > 0"
+      [ratings]="ratings"
+    ></app-product>
+  </div>
+  
+
+<div>
+
+    <p> <button (click)="addToCartValue()">Add</button> </p>
+    <span>{{ addToCart }}</span>
+    <p> <button (click)="removeToCartValue()">Minus</button> </p>
+
+</div>
+
+<div>
+    <p>Search functionality</p>
+    <app-search #childRef></app-search>
+    <button (click)="childRef.toBeCalledInParent()">Call Child Method</button>
+
+</div>
+
+<div *ngFor="let  pr of products">
+
+    {{pr}}
+
+</div>
+
+<div *ngFor="let  pr of priceList; index as i">
+
+    {{i}} +"is index for " {{priceList[i]}}
+
+</div>
+
+<div *ngFor="let _  of priceList index as i">
+
+    {{"displaying using index ::"+priceList[i]}}
+
+</div>
+<div *ngFor="let _  of priceList; let i=index">
+
+    {{"displaying using index ::"+priceList[i]}}
+
+</div>
+
+<div *ngFor="let pr of complexObj ;index as k">
+    <div *ngIf="pr.discount!=0 ">
+
+    <li>"id is:" {{pr.id}}</li>
+    <li>"name is:" {{pr.name}}</li>
+    <li *ngFor="let cat of pr.categories ">"category is:" {{cat}}</li>
+    <li >"price is:" {{pr.price}}</li>
+
+
+
+</div>
+
+</div>
+<div [ngStyle]="{fontWeight:'bold', color:instock>0 ? 'red': 'green'}">
+{{instock>0 ? "product available ": "product is not available"}}
+</div>
